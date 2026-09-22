@@ -57,6 +57,7 @@ function SituationReportPage() {
   const [modalOpen, setModalOpen] = useState(false);
   const [notice, setNotice] = useState("Typhoon Maring SitRep summary loaded.");
   const event = events.find((item) => item.id === eventId) ?? defaultEvent;
+  const eventName = event.label.split(" — ").at(0) ?? event.label;
 
   function notify(message: string) {
     setNotice(message);
@@ -126,7 +127,7 @@ function SituationReportPage() {
             <strong>Barangay Disaster Risk Reduction and Management Committee</strong>
             <span>Emergency Operations Center</span>
             <h2>Situation Report</h2>
-            <h3>{event.label.split(" — ")[0]}</h3>
+            <h3>{eventName}</h3>
           </header>
 
           <div className="report-meta">
@@ -225,7 +226,7 @@ function SituationReportPage() {
         </section>
       </div>
 
-      {modalOpen && <GenerateDialog eventName={event.label.split(" — ")[0]} onClose={() => setModalOpen(false)} onGenerate={() => { setModalOpen(false); notify("SITREP-2026-015 generated and locked."); }} onExport={() => notify("SitRep PDF downloaded.")} />}
+      {modalOpen && <GenerateDialog eventName={eventName} onClose={() => setModalOpen(false)} onGenerate={() => { setModalOpen(false); notify("SITREP-2026-015 generated and locked."); }} onExport={() => notify("SitRep PDF downloaded.")} />}
     </main>
   );
 }

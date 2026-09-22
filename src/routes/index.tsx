@@ -31,8 +31,10 @@ export const Route = createFileRoute("/")({
   component: SituationReportPage,
 });
 
+const defaultEvent = { id: "typhoon", label: "Typhoon Maring — October 24, 2026", type: "Tropical cyclone", declared: "Oct 24, 2026 · 04:00", finished: "Ongoing", scope: "Puroks 1–7" };
+
 const events = [
-  { id: "typhoon", label: "Typhoon Maring — October 24, 2026", type: "Tropical cyclone", declared: "Oct 24, 2026 · 04:00", finished: "Ongoing", scope: "Puroks 1–7" },
+  defaultEvent,
   { id: "flood", label: "Flash Flood — September 18, 2026", type: "Flash flood", declared: "Sep 18, 2026 · 21:15", finished: "Sep 20, 2026 · 10:00", scope: "Puroks 3–6" },
 ];
 
@@ -54,7 +56,7 @@ function SituationReportPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [notice, setNotice] = useState("Typhoon Maring SitRep summary loaded.");
-  const event = events.find((item) => item.id === eventId) ?? events[0];
+  const event = events.find((item) => item.id === eventId) ?? defaultEvent;
 
   function notify(message: string) {
     setNotice(message);
@@ -253,7 +255,7 @@ function Metric({ label, value, detail, tone = "" }: { label: string; value: str
 }
 
 function DataTable({ headers, rows }: { headers: string[]; rows: string[][] }) {
-  return <div className="table-scroll"><table><thead><tr>{headers.map((header) => <th key={header}>{header}</th>)}</tr></thead><tbody>{rows.map((row, rowIndex) => <tr key={`${row[0]}-${rowIndex}`}>{row.map((cell, cellIndex) => <td key={`${cell}-${cellIndex}`}>{cell}</td>)}</tr>)}</tbody></table></div>;
+  return <div className="table-scroll"><table><thead><tr>{headers.map((header) => <th key={header}>{header}</th>)}</tr></thead><tbody>{rows.map((row, rowIndex) => <tr key={rowIndex}>{row.map((cell, cellIndex) => <td key={`${cell}-${cellIndex}`}>{cell}</td>)}</tr>)}</tbody></table></div>;
 }
 
 function GenerateDialog({ eventName, onClose, onGenerate, onExport }: { eventName: string; onClose: () => void; onGenerate: () => void; onExport: () => void }) {

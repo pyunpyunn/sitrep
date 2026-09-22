@@ -1,14 +1,28 @@
-# Welcome to your Lovable project
+# Insightful Dashboard
+
+can you redesign this page into a modern, more professional, more minimalistic approach? make sure it's modern and u also have to consider the UI/UX of the page. make it look professional and industry level because this is a real project
+
+do not make it look ai-generated. use themes like microsoft theme type of style. 
+
+i already gave u the files of the page that i want you to redesign. re arrange everything. make it look like a fresh-looking situation report generate page
+
+consider like there might be some texts that dont need to be there anymore, u have to keep the page minimalist so only display the data and the label for the data and proper sectioning and proper title
+
+do not change the structure of the form u, but the page itself
+
+do not also modify the data and te backend part, im only allowing you to redesign and rearrange the front end
+
+be a professional frontend designer
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/11c4dd07-b4bb-473b-a544-19954dba2abc).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +34,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
